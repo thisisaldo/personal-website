@@ -114,7 +114,19 @@ function copyEmail() {
 
     // Copy to clipboard
     navigator.clipboard.writeText(email).then(() => {
-        // Show notification
+        // Update notification content with modern structure
+        notification.innerHTML = `
+            <svg class="email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="email-text">
+                <div class="email-label">📋 Copied to clipboard</div>
+                <div class="email-address">${email}</div>
+            </div>
+        `;
+        
+        // Show notification with animation
         notification.classList.add('show');
 
         // Change button content temporarily with checkmark icon
@@ -125,19 +137,27 @@ function copyEmail() {
             <span>Copied!</span>
         `;
 
-        // Reset after 3 seconds
+        // Reset after 4 seconds
         setTimeout(() => {
             notification.classList.remove('show');
             emailBtn.innerHTML = originalContent;
-        }, 3000);
+        }, 4000);
     }).catch(() => {
         // Fallback: show notification anyway
-        notification.textContent = 'Email: ' + email;
+        notification.innerHTML = `
+            <svg class="email-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+            <div class="email-text">
+                <div class="email-label">✉️ My Email</div>
+                <div class="email-address">${email}</div>
+            </div>
+        `;
         notification.classList.add('show');
 
         setTimeout(() => {
             notification.classList.remove('show');
-            notification.textContent = 'Email copied to clipboard!';
         }, 5000);
     });
 }
