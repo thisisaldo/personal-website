@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aldo - AI Engineer & Entrepreneur</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="scroll-progress"></div>
+    <nav class="nav">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">Aldo</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#expertise">Work</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container">
+        <section class="hero fade-in">
+            <div class="hero-content">
+                <p class="hero-greeting">Hello, I'm</p>
+                <h1 class="hero-name">Aldo</h1>
+                <p class="hero-title">AI Engineer • Entrepreneur • Boxer</p>
+                <p class="hero-description">Building intelligent systems and businesses at the intersection of technology and innovation. Bringing the discipline and precision of boxing to every challenge I take on.</p>
+                <a href="#contact" class="cta-button">Get in touch</a>
+            </div>
+        </section>
+
+        <section id="about" class="section fade-in">
+            <div class="section-header">
+                <span class="section-number">01</span>
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <p>I combine innovation from AI engineering and the drive to build businesses that solve real problems. Whether in the ring or in business, I approach every challenge with strategic thinking and relentless determination.</p>
+                <p>My work focuses on creating intelligent systems that push the boundaries of what's possible with machine learning and AI technologies. Boxing has taught me the value of discipline, adaptability, and perseverance—qualities that translate directly into building cutting-edge solutions.</p>
+            </div>
+        </section>
+
+        <section id="expertise" class="section fade-in">
+            <div class="section-header">
+                <span class="section-number">02</span>
+                <h2>What I Do</h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-number">01</div>
+                    <h3>AI Engineering</h3>
+                    <p>Building intelligent systems with machine learning and AI. Specializing in creating solutions that transform data into actionable insights.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">02</div>
+                    <h3>Entrepreneurship</h3>
+                    <p>Creating and growing businesses from the ground up. Turning ideas into sustainable ventures through strategic execution.</p>
+                </div>
+                <div class="card">
+                    <div class="card-number">03</div>
+                    <h3>Boxing</h3>
+                    <p>Competing in the ring with discipline and dedication. Training rigorously to push physical and mental limits while mastering the sweet science.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section fade-in">
+            <div class="section-header">
+                <span class="section-number">03</span>
+                <h2>Let's Connect</h2>
+            </div>
+            <p class="contact-description">Interested in collaborating or just want to say hi? Feel free to reach out.</p>
+            <div class="links">
+                <button id="emailBtn" class="link-button" onclick="copyEmail()">
+                    <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                        <polyline points="22,6 12,13 2,6"></polyline>
+                    </svg>
+                    <span>Email</span>
+                </button>
+                <a href="https://www.linkedin.com/in/aldodf/" target="_blank" class="link-button">
+                    <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M20.5 2h-17A1.5 1.5 0 002 3.5v17A1.5 1.5 0 003.5 22h17a1.5 1.5 0 001.5-1.5v-17A1.5 1.5 0 0020.5 2zM8 19H5v-9h3zM6.5 8.25A1.75 1.75 0 118.3 6.5a1.78 1.78 0 01-1.8 1.75zM19 19h-3v-4.74c0-1.42-.6-1.93-1.38-1.93A1.74 1.74 0 0013 14.19a.66.66 0 000 .14V19h-3v-9h2.9v1.3a3.11 3.11 0 012.7-1.4c1.55 0 3.36.86 3.36 3.66z"></path>
+                    </svg>
+                    <span>LinkedIn</span>
+                </a>
+                <a href="https://github.com/thisisaldo"target="_blank" rel="noopener noreferrer" class="link-button">
+                    <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2C6.477 2 2 6.477 2 12c0 4.42 2.865 8.17 6.839 9.49.5.092.682-.217.682-.482 0-.237-.008-.866-.013-1.7-2.782.603-3.369-1.34-3.369-1.34-.454-1.156-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.831.092-.646.35-1.086.636-1.336-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.114 2.504.336 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.203 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.167 22 16.418 22 12c0-5.523-4.477-10-10-10z"></path>
+                    </svg>
+                    <span>GitHub</span>
+                </a>
+                <a href="https://youtube.com" target="_blank" class="link-button">
+                    <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"></path>
+                    </svg>
+                    <span>YouTube</span>
+                </a>
+                <a href="https://www.instagram.com/thiisisaldo/" target="_blank" class="link-button">
+                    <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"></path>
+                    </svg>
+                    <span>Instagram</span>
+                </a>
+                <a href="https://www.tiktok.com/@thiisisaldo" target="_blank" class="link-button">
+                    <svg class="link-icon" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"></path>
+                    </svg>
+                    <span>TikTok</span>
+                </a>
+            </div>
+            <div id="emailNotification" class="email-notification">Email copied to clipboard!</div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2026 All rights reserved</p>
+            </div>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
