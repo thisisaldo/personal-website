@@ -12,19 +12,44 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, observerOptions);
 
+// Detect if device is mobile/tablet
+function isMobileDevice() {
+    return (typeof window.orientation !== "undefined") || (navigator.userAgent.indexOf('IEMobile') !== -1) || window.matchMedia("(max-width: 768px)").matches;
+}
+
+// Fix viewport height for mobile browsers (addresses dynamic address bars)
+function setMobileVH() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
 // Observe all sections
 document.addEventListener('DOMContentLoaded', () => {
     const sections = document.querySelectorAll('.section');
     sections.forEach(section => observer.observe(section));
 
-    // Create cursor glow effect
-    createCursorGlow();
+    const isMobile = isMobileDevice();
 
-    // Add magnetic effect to buttons
-    addMagneticEffect();
+    // Set mobile viewport height
+    if (isMobile) {
+        setMobileVH();
+        window.addEventListener('resize', setMobileVH);
+    }
 
-    // Add parallax effect to hero
-    addParallaxEffect();
+    // Create cursor glow effect (desktop only)
+    if (!isMobile) {
+        createCursorGlow();
+    }
+
+    // Add magnetic effect to buttons (desktop only)
+    if (!isMobile) {
+        addMagneticEffect();
+    }
+
+    // Add parallax effect to hero (desktop only)
+    if (!isMobile) {
+        addParallaxEffect();
+    }
 
     // Update scroll progress
     updateScrollProgress();

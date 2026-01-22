@@ -38,6 +38,7 @@ body::before {
 
 html {
     scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%; /* Prevent font scaling in landscape on iOS */
 }
 
 body {
@@ -46,6 +47,25 @@ body {
     color: var(--color-text);
     background: var(--color-bg);
     overflow-x: hidden;
+    -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2); /* Better tap highlight color */
+}
+
+/* Improve button and link interactions on mobile */
+button,
+a,
+.link-button,
+.cta-button {
+    -webkit-tap-highlight-color: rgba(37, 99, 235, 0.2);
+    -webkit-touch-callout: none; /* Disable callout on long press */
+    user-select: none; /* Prevent text selection */
+}
+
+/* Allow text selection in readable content */
+p,
+.about-content,
+.contact-description {
+    user-select: text;
+    -webkit-user-select: text;
 }
 
 /* Cursor glow effect */
@@ -96,6 +116,9 @@ body {
     border-bottom: 1px solid var(--color-border);
     z-index: 1000;
     transition: var(--transition);
+    /* Safe area for notched devices */
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
 }
 
 .nav-container {
@@ -685,35 +708,68 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
     .nav-container {
-        padding: 16px 24px;
+        padding: 16px 20px;
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-logo {
+        font-size: 18px;
     }
 
     .nav-links {
-        gap: 20px;
+        gap: 16px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
     }
 
     .nav-links a {
         font-size: 14px;
+        padding: 8px 4px;
+    }
+
+    .badge {
+        font-size: 9px;
+        padding: 2px 6px;
     }
 
     .container {
-        padding: 80px 24px 24px;
+        padding: 100px 20px 20px;
+        padding-left: max(20px, env(safe-area-inset-left));
+        padding-right: max(20px, env(safe-area-inset-right));
     }
 
     .hero {
         min-height: 80vh;
+        min-height: calc(var(--vh, 1vh) * 80); /* Use custom vh for mobile browsers */
+        padding: 40px 0;
+    }
+
+    .hero-greeting {
+        font-size: 16px;
     }
 
     .hero-title {
         font-size: 20px;
+        margin-bottom: 20px;
     }
 
     .hero-description {
         font-size: 16px;
+        margin-bottom: 32px;
+    }
+
+    .cta-button {
+        padding: 14px 28px;
+        font-size: 15px;
+        width: 100%;
+        max-width: 300px;
+        text-align: center;
     }
 
     .section {
-        margin: 80px 0;
+        margin: 60px 0;
     }
 
     .section-header {
@@ -721,14 +777,190 @@ footer {
         margin-bottom: 32px;
     }
 
+    .section-header h2 {
+        font-size: 28px;
+    }
+
+    .about-content p {
+        font-size: 16px;
+    }
+
     .grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 20px;
+    }
+
+    .card {
+        padding: 32px 24px;
+    }
+
+    .contact-description {
+        font-size: 16px;
+    }
+
+    .links {
+        gap: 12px;
+        justify-content: center;
+    }
+
+    .link-button {
+        padding: 16px 20px;
+        font-size: 14px;
+        min-height: 52px;
+        flex: 1 1 calc(50% - 6px);
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .link-icon {
+        width: 18px;
+        height: 18px;
+    }
+
+    .email-notification {
+        padding: 16px 20px;
+        font-size: 14px;
+        max-width: 90%;
+    }
+
+    .email-notification .email-address {
+        font-size: 15px;
+        word-break: break-all;
     }
 
     .footer-content {
         flex-direction: column;
         gap: 8px;
         text-align: center;
+    }
+
+    /* Disable magnetic and parallax effects on mobile for better performance */
+    .card,
+    .cta-button,
+    .link-button {
+        transform: none !important;
+    }
+
+    .hero-content {
+        transform: none !important;
+    }
+}
+
+/* Extra small devices (phones in portrait mode) */
+@media (max-width: 480px) {
+    .nav-container {
+        padding: 14px 16px;
+    }
+
+    .nav-logo {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        gap: 12px;
+    }
+
+    .nav-links a {
+        font-size: 13px;
+        padding: 6px 2px;
+    }
+
+    .container {
+        padding: 100px 16px 16px;
+        padding-left: max(16px, env(safe-area-inset-left));
+        padding-right: max(16px, env(safe-area-inset-right));
+    }
+
+    .hero {
+        min-height: 70vh;
+        min-height: calc(var(--vh, 1vh) * 70); /* Use custom vh for mobile browsers */
+        padding: 20px 0;
+    }
+
+    .hero-greeting {
+        font-size: 14px;
+    }
+
+    .hero-name {
+        font-size: clamp(36px, 12vw, 48px);
+    }
+
+    .hero-title {
+        font-size: 18px;
+    }
+
+    .hero-description {
+        font-size: 15px;
+    }
+
+    .cta-button {
+        padding: 14px 24px;
+        font-size: 14px;
+        width: 100%;
+    }
+
+    .section {
+        margin: 50px 0;
+    }
+
+    .section-header {
+        gap: 10px;
+        margin-bottom: 24px;
+    }
+
+    .section-number {
+        font-size: 14px;
+    }
+
+    .section-header h2 {
+        font-size: 24px;
+    }
+
+    .about-content p {
+        font-size: 15px;
+    }
+
+    .grid {
+        gap: 16px;
+    }
+
+    .card {
+        padding: 28px 20px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card p {
+        font-size: 15px;
+    }
+
+    .contact-description {
+        font-size: 15px;
+    }
+
+    .links {
+        gap: 10px;
+    }
+
+    .link-button {
+        padding: 14px 16px;
+        font-size: 13px;
+        min-height: 48px;
+        flex: 1 1 100%;
+    }
+
+    .email-notification {
+        padding: 14px 16px;
+        font-size: 13px;
+    }
+
+    .email-notification .email-label {
+        font-size: 10px;
+    }
+
+    .email-notification .email-address {
+        font-size: 14px;
     }
 }
