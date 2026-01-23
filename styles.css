@@ -131,9 +131,8 @@ p,
 }
 
 .nav-logo {
-    font-size: 20px;
-    font-weight: 700;
-    color: var(--color-text);
+    display: inline-block;
+    line-height: 0;
     text-decoration: none;
     transition: var(--transition);
 }
@@ -145,7 +144,10 @@ p,
 .logo-image {
     height: 40px;
     width: auto;
+    max-width: 100%;
+    max-height: 40px;
     display: block;
+    object-fit: contain;
     transition: var(--transition);
 }
 
