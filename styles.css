@@ -147,8 +147,6 @@ p,
     width: auto;
     display: block;
     transition: var(--transition);
-    background: transparent;
-    mix-blend-mode: multiply;
 }
 
 .nav-logo:hover .logo-image {
