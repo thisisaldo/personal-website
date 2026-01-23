@@ -145,6 +145,7 @@ p,
 .nav-links {
     display: flex;
     gap: 32px;
+    justify-content: center;
 }
 
 .nav-links a {
