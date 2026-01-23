@@ -126,7 +126,7 @@ p,
     margin: 0 auto;
     padding: 20px 40px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -142,11 +142,22 @@ p,
     color: var(--color-accent);
 }
 
+.logo-image {
+    height: 40px;
+    width: auto;
+    display: block;
+    transition: var(--transition);
+    background: transparent;
+    mix-blend-mode: multiply;
+}
+
+.nav-logo:hover .logo-image {
+    transform: scale(1.05);
+}
+
 .nav-links {
     display: flex;
     gap: 32px;
-    justify-content: center;
-    width: 100%;
 }
 
 .nav-links a {
